@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Similarity Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit"> Submit </button>
+	</form>
+
+	{% if output %}
+		<h1> Image is of {{output}} </h1>
+    {% endif %}
+    
+
+    {% if listings %}
+    <div class = "divider"></div>
+    <div class="row">
+        {% for post in listings %}
+        <br>
+            <div class="col s4">
+                <div class="card" style = "height: 600px;">
+                    <div class="card-image" style="height: 400px;">
+                        <a href="{{ post.3 }}"><img src="{{ post.2 }}" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ post.0 }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ post.3 }}">View listing: Price {{ post.1 }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>Nope</p>
+    {% endif %}
+    
+</body>
+</html>
