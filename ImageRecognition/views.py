@@ -4,7 +4,7 @@ from django.shortcuts import render
 from . import forms
 
 # Imaginary function to handle an uploaded file.
-from .operations import recognize, scrape
+from .operations import recognize, scrape, scrape_limeroad, scrape_zobello
 
 
 def home(request):
@@ -23,8 +23,10 @@ def home(request):
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
-                search_term += i
+                search_term += i 
             listings = scrape(search_term)
+            listings += scrape_limeroad(search_term)
+            listings += scrape_zobello(search_term)
             return render(request, 'upload.html', {'form': form, 'output': output, 'listings': listings})
     else:
     	form = forms.UploadFileForm()

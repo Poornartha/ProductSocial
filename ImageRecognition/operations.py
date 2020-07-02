@@ -1,6 +1,5 @@
 import numpy as np
 import keras
-from keras import backend as K
 from keras.layers.core import Dense
 from keras.optimizers import Adam
 from keras.metrics import categorical_crossentropy
@@ -74,3 +73,61 @@ def scrape(search):
         final_postings.append((post_title, post_price, image_collection[i], link_base.format(link_collection[i+5])))
         i = i + 1
     return final_postings
+
+
+def scrape_limeroad(search):
+    BASE_FLIPKART_URL = 'https://www.limeroad.com/search/{}'
+    search_tags = search.split(' ')
+    search_term = ''
+    for search in search_tags:
+        search_term += search + '%20'
+    final_url = BASE_FLIPKART_URL.format(search_term)
+    print(final_url)
+    response = requests.get(final_url)
+    data = response.text
+    soup = BeautifulSoup(data, features='html.parser')
+    body = soup.find('body')
+    prods = body.find_all('div', {'class': "prdC bgF br4 fs12 fg2t dIb vT pR taC bs bd2E bdE"})
+    image_set = []
+    links_set = []
+    brand = []
+    post_price = []
+    for product in prods:
+        image_set.append(product.find('img', {'class': "dB h412 w310 mA pR prdI gtm-p an-ll o0"})['data-src'])
+        links_set.append('https://www.limeroad.com/' + product.find('a', {'class': "dB pR taC ldr gtm-p h412 bs oH phref"}).get('href'))
+        brand.append(product.find('a', {'class': "c9 dB fs11 wp96 oH tdN ttC wsN pt4"}).text.split('\n')[1].lstrip())
+        post_price.append(product.find('div', {'class': "dIb vM c3 fs14"}).text)
+    final_postings = []
+    for i in range(len(image_set)):
+        final_postings.append((brand[i], post_price[i], image_set[i], links_set[i]))
+    return final_postings
+    
+
+def scrape_zobello(search):
+    BASE_FLIPKART_URL = 'https://www.zobello.com/search?type=product&q={}'
+    search_tags = search.split(' ')
+    search_term = ''
+    for search in search_tags:
+        search_term += search + '+'
+    final_url = BASE_FLIPKART_URL.format(search_term)
+    response = requests.get(final_url, timeout=10)
+    data = response.text
+    soup = BeautifulSoup(data, features='html.parser')
+    body = soup.find('body')
+    print(body)
+    cards = body.find_all('div', {'class': 'main_box'})
+    image_set = []
+    link_set = []
+    price_set = []
+    title_set = []
+    for card in cards:
+        image_set.append('https:' + card.find('img')['srcset'].split(' ')[0])
+        link_set.append('https://www.zobello.com/' + card.find('a').get('href'))
+        price_set.append(card.find('div', {'class': 'price'}).text)
+        title_set.append(card.find('h5').text)
+    final_postings = []
+    for i in range(len(title_set)):
+        final_postings.append((title_set[i], price_set[i], image_set[i], link_set[i]))
+    return final_postings
+
+
