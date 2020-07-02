@@ -85,7 +85,7 @@ def zobello(request):
     elif 'shoe' in output:
         output = 'shoe'
     search_term = output
-    listings = scrape_limeroad(search_term)
+    listings = scrape_zobello(search_term)
     context = {'search_term': search_term,
                 'listings': listings}
     if request.method == 'POST':
