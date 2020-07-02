@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="staticfiles/css/style.css">
+
+    <title>Product Social</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg transparent navbar-inverse">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand ml-auto" href="#">Product Social</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trending</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Recommendations</a>
+                </li>
+            </ul>
+        </div>
+
+        <button type="button" class="btn btn-primary glow-button">Profile</button>
+    </nav>
+
+    <div class="container">
+        <div class="description">
+            <div class="row primary-description col-md">
+                Spend Less Time Searching!
+            </div>
+            <div class="row secondary-description col-md">
+                Take a picture and search for the product
+            </div>
+            <form>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="products-found">
+        <div class="container">
+            <a href="#"><img src="./staticfiles/img/bewakoof-logo.png" alt="" height="20"></a>
+            <a href="#"><img src="./staticfiles/img/limeroad-logo.jpg" alt="" height="120"></a>
+            <a href="#"><img src="./staticfiles/img/zobello-logo.png" alt="" height="80"></a>
+            <a href="#"><img src="./staticfiles/img/koovs-logo.png" alt="" height="40"></a>
+        </div>
+
+        <div class="container products-found">
+            <!-- Insert product cards here! -->
+            <div class="card" style="width: 18rem">
+                <img src="./staticfiles/img/bg10.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Blue Jeans</h5>
+                    <div class="container">
+                        <h5>Rs 2500</h5>
+                        <a href="#" class="btn btn-primary glow-button">Visit Store</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="staticfiles/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
