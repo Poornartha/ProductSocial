@@ -82,7 +82,6 @@ def scrape_limeroad(search):
     for search in search_tags:
         search_term += search + '%20'
     final_url = BASE_FLIPKART_URL.format(search_term)
-    print(final_url)
     response = requests.get(final_url)
     data = response.text
     soup = BeautifulSoup(data, features='html.parser')
@@ -114,7 +113,6 @@ def scrape_zobello(search):
     data = response.text
     soup = BeautifulSoup(data, features='html.parser')
     body = soup.find('body')
-    print(body)
     cards = body.find_all('div', {'class': 'main_box'})
     image_set = []
     link_set = []
