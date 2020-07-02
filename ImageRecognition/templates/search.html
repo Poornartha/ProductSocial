@@ -28,8 +28,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Search</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Search</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Trending</a>
@@ -65,9 +65,9 @@
 
     <div class="products-found">
         <div class="container">
-            <a href="#"><img src="{% static '/img/bewakoof-logo.png' %}" alt="" height="20"></a>
-            <a href="#"><img src="{% static '/img/limeroad-logo.jpg' %}" alt="" height="120"></a>
-            <a href="#"><img src="{% static '/img/zobello-logo.png' %}" alt="" height="80"></a>
+            <a href="{% url 'home' %}"><img src="{% static '/img/bewakoof-logo.png' %}" alt="" height="20"></a>
+            <a href="{% url 'limeroad' %}"><img src="{% static '/img/limeroad-logo.jpg' %}" alt="" height="120"></a>
+            <a href="{% url 'zobello' %}"><img src="{% static '/img/zobello-logo.png' %}" alt="" height="80"></a>
             <a href="#"><img src="{% static '/img/koovs-logo.png' %}" alt="" height="40"></a>
         </div>
         {% if listings %}
