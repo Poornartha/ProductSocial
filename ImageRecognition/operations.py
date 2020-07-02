@@ -68,7 +68,7 @@ def scrape(search):
     while i<len(post_listings) and i<10:
         post = post_listings[i]
         post_title = post.find('h3').text
-        post_price = post.find('b').text
+        post_price = 'Rs' + post.find('b').text
         link_base = "https://www.bewakoof.com{}"
         final_postings.append((post_title, post_price, image_collection[i], link_base.format(link_collection[i+5])))
         i = i + 1

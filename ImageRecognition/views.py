@@ -27,10 +27,10 @@ def home(request):
             listings = scrape(search_term)
             listings += scrape_limeroad(search_term)
             listings += scrape_zobello(search_term)
-            return render(request, 'upload.html', {'form': form, 'output': output, 'listings': listings})
+            return render(request, 'search.html', {'form': form, 'output': output, 'listings': listings})
     else:
     	form = forms.UploadFileForm()
-    return render(request, 'upload.html', {'form': form})
+    return render(request, 'search.html', {'form': form})
 
 # def search(request, query):
 #     
