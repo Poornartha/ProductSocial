@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 
-class UserCreateForm(UserCreationForm):
+class CustomerCreationForm(UserCreationForm):
 
     first_name = forms.CharField(max_length=30, required=True)
     last_name = forms.CharField(max_length=30, required=True)
@@ -58,11 +58,11 @@ class UserCreateForm(UserCreationForm):
         self.fields['password2'].widget.attrs.update({'class' : 'form-field'})
 
     def clean(self):
-        cleaned_data = super(UserForm, self).clean()
+        cleaned_data = super(UserCreationForm, self).clean()
         password1 = cleaned_data.get("password1")
         password2 = cleaned_data.get("password2")
 
-        if password != password2:
+        if password1 != password2:
             raise forms.ValidationError(
                 "password and confirm_password does not match"
             )

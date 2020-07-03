@@ -3,7 +3,6 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from . import forms
 from .models import Search
-from accounts.models import User
 
 # Imaginary function to handle an uploaded file.
 from .operations import recognize, scrape, scrape_limeroad, scrape_zobello
@@ -206,3 +205,7 @@ def randomize(request):
         form = forms.UploadFileForm()
         context['form'] = form
     return render(request, 'search.html', context)
+
+
+def landing(request):
+    return render(request, 'landing.html')
