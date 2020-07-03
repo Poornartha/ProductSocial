@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Dashboard',
     'bootstrap3',
     'ImageRecognition',
     'django.contrib.admin',
@@ -42,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +72,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'ImageSocial.wsgi.application'
 
