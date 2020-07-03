@@ -44,7 +44,7 @@ def home(request):
             if len(listings) == 0:
                 search_term = color_term
                 listings = scrape(color_term)
-            
+
             if request.user.is_active and search_term != '':
                 s, created = Search.objects.get_or_create(search_term=search_term)
                 s.users.add(request.user)
@@ -139,12 +139,12 @@ def zobello(request):
             if len(listings) == 0:
                 search_term = color_term
                 listings = scrape_zobello(color_term)
-            
+
             if request.user.is_active and search_term != '':
                 s, created = Search.objects.get_or_create(search_term=search_term)
                 s.users.add(request.user)
-            
-            
+
+
             context = {'form': form, 'output': output,
                         'listings': listings,
                         'search': search_term}
@@ -186,11 +186,11 @@ def randomize(request):
                 search_term += i
             search_term += " " + detect_color(request.FILES['image'])
             search_global = search_term
-            
+
             if request.user.is_active and search_term != '':
                 s, created = Search.objects.get_or_create(search_term=search_term)
                 s.users.add(request.user)
-            
+
             listings_zob = scrape_zobello(search_term)
             listings_lime = scrape_limeroad(search_term)
             listings_bewa = scrape(search_term)
@@ -206,5 +206,3 @@ def randomize(request):
         form = forms.UploadFileForm()
         context['form'] = form
     return render(request, 'search.html', context)
-
-

@@ -7,6 +7,9 @@ class UserCreateForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=True)
     last_name = forms.CharField(max_length=30, required=True)
     email = forms.EmailField(max_length=254, required=True)
+    username = forms.CharField(max_length=30, required=True)
+    password1=forms.CharField(widget=forms.PasswordInput(), required=True)
+    password2=forms.CharField(widget=forms.PasswordInput(), required=True, )
     FAVORITE_COLORS_CHOICES = [
         ('blue', 'Blue'),
         ('green', 'Green'),
@@ -44,3 +47,22 @@ class UserCreateForm(UserCreationForm):
         self.fields['fav_product'].label = 'Favourite Product'
         self.fields['password1'].label = 'Password'
         self.fields['password2'].label = 'Confirm Password'
+
+        self.fields['first_name'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['last_name'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['username'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['email'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['favourite_colour'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['fav_product'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['password1'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['password2'].widget.attrs.update({'class' : 'form-field'})
+
+    def clean(self):
+        cleaned_data = super(UserForm, self).clean()
+        password1 = cleaned_data.get("password1")
+        password2 = cleaned_data.get("password2")
+
+        if password != password2:
+            raise forms.ValidationError(
+                "password and confirm_password does not match"
+            )
