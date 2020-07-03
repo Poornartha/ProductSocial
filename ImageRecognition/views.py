@@ -45,7 +45,7 @@ def home(request):
                 search_term = color_term
                 listings = scrape(color_term)
             
-            if request.user.is_active:
+            if request.user.is_active and search_term != '':
                 s, created = Search.objects.get_or_create(search_term=search_term)
                 s.users.add(request.user)
 
@@ -93,7 +93,7 @@ def limeroad(request):
                 search_term = color_term
                 listings = scrape_limeroad(color_term)
 
-            if request.user.is_active:
+            if request.user.is_active and search_term != '':
                 s, created = Search.objects.get_or_create(search_term=search_term)
                 s.users.add(request.user)
 
@@ -140,7 +140,7 @@ def zobello(request):
                 search_term = color_term
                 listings = scrape_zobello(color_term)
             
-            if request.user.is_active:
+            if request.user.is_active and search_term != '':
                 s, created = Search.objects.get_or_create(search_term=search_term)
                 s.users.add(request.user)
             
@@ -187,7 +187,7 @@ def randomize(request):
             search_term += " " + detect_color(request.FILES['image'])
             search_global = search_term
             
-            if request.user.is_active:
+            if request.user.is_active and search_term != '':
                 s, created = Search.objects.get_or_create(search_term=search_term)
                 s.users.add(request.user)
             
