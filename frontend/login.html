@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="staticfiles/css/style.css">
+
+    <title>Product Social</title>
+</head>
+
+<body>
+
+    <nav id="navbar" class="navbar custom-light navbar-expand-lg transparent navbar-inverse">
+
+        <a class="navbar-brand ml-auto" href="#">Product Social</a>
+
+        <button class="navbar-toggler navbar-light ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item current">
+                    <a class="nav-link" href="#">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trending</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Recommendations</a>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-primary glow-button ml-auto">Profile</button>
+        </div>
+
+
+    </nav>
+
+    <div class="wrapper-2 shadow-card">
+        <div id="login" style="display: none;">
+            <div class="primary-description">
+                Login
+            </div>
+            <br>
+            <form action="#">
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="username" id="username" placeholder="Username">
+                </div>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-options">
+                    <div class="checkbox-field">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember Me</label>
+                    </div>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <br>
+                <div class="form-field">
+                    <input type="submit" value="Login" class="btn-primary btn glow-button">
+                </div>
+                <p>Don't have an account?</p>
+                <a href="#" onclick="gotoSignUp()">Sign Up</a>
+            </form>
+        </div>
+
+        <div  id="sign-up" >
+            <div class="primary-description">
+                Sign Up
+            </div>
+            <br>
+            <form action="#">
+                <div class="form-field">
+                    <label for="first-name">First Name</label>
+                    <input type="name" id="first-name" placeholder="First name">
+                </div>
+                <div class="form-field">
+                    <label for="second-name">Second Name</label>
+                    <input type="name" id="second-name" placeholder="Second name">
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="username" id="username" placeholder="Username">
+                </div>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-field">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+
+                <div class="form-field">
+                    <label for="colour">Enter your favourite colour</label>
+                    <select id="colour" name="colour">
+                        <option value="volvo">Red</option>
+                        <option value="saab">Black</option>
+                        <option value="fiat">Blue</option>
+                        <option value="audi">Yellow</option>
+                    </select>   
+                </div>
+                
+                <div class="form-field">
+                    <label for="clothing">Enter your favourite apparel</label>
+                    <select id="clothing" name="clothing">
+                        <option value="volvo">Shirts</option>
+                        <option value="saab">Tee</option>
+                        <option value="fiat">Jeans</option>
+                        <option value="audi">Backpacks</option>
+                    </select>   
+                </div>
+                <br>
+                <div class="form-field">
+                    <input type="submit" value="Sign Up" class="btn-primary btn glow-button">
+                </div>
+                <p>Already have an account?</p>
+                <a href="#" onclick="gotoLogin()">Login</a>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="staticfiles/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
