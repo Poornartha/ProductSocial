@@ -5,6 +5,7 @@ from . import forms
 
 # Imaginary function to handle an uploaded file.
 from .operations import recognize, scrape, scrape_limeroad, scrape_zobello
+from .color_detection import detect_color
 
 search_global = ''
 
@@ -15,9 +16,16 @@ def home(request):
         output = 'shorts' 
     elif 'shoe' in output:
         output = 'shoe'
+    elif 'jersey' in output:
+        output = 'tee'
+    elif 'cardigan' in output:
+        output = 'shirt'
     search_term = output
     listings = scrape(search_term)
-    context = {'search_term': search_term,
+    if len(listings) == 0:
+        search_term = search_term.split(' ')[0]
+        listings = scrape(search_term.split(' ')[0])
+    context = {'search': search_term,
                 'listings': listings}
     if request.method == 'POST':
         form = forms.UploadFileForm(request.POST, request.FILES)
@@ -27,15 +35,24 @@ def home(request):
                 output = 'shorts'
             elif 'shoe' in output:
                 output = 'shoe'
+            elif 'jersey' in output:
+                output = 'tee'
+            elif 'cardigan' in output:
+                output = 'shirt'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
                 search_term += i
+            color_term = detect_color(request.FILES['image'])
+            search_term += " " + color_term
             search_global = search_term
             listings = scrape(search_term)
+            if len(listings) == 0:
+                search_term = color_term
+                listings = scrape(color_term)
             context = {'form': form, 'output': output,
                         'listings': listings,
-                        'output': output}
+                        'search': search_term}
             return render(request, 'search.html', context)
     else:
         form = forms.UploadFileForm()
@@ -50,9 +67,16 @@ def limeroad(request):
         output = 'shorts'
     elif 'shoe' in output:
         output = 'shoe'
+    elif 'jersey' in output:
+        output = 'tee'
+    elif 'cardigan' in output:
+        output = 'shirt'
     search_term = output
     listings = scrape_limeroad(search_term)
-    context = {'search_term': search_term,
+    if len(listings) == 0:
+        search_term = search_term.split(' ')[0]
+        listings = scrape_limeroad(search_term.split(' ')[0])
+    context = {'search': search_term,
                 'listings': listings}
     if request.method == 'POST':
         form = forms.UploadFileForm(request.POST, request.FILES)
@@ -62,15 +86,24 @@ def limeroad(request):
                 output = 'shorts'
             elif 'shoe' in output:
                 output = 'shoe'
+            elif 'jersey' in output:
+                output = 'tee'
+            elif 'cardigan' in output:
+                output = 'shirt'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
                 search_term += i
+            color_term = detect_color(request.FILES['image'])
+            search_term += " " + color_term
             search_global = search_term
             listings = scrape_limeroad(search_term)
+            if len(listings) == 0:
+                search_term = color_term
+                listings = scrape_limeroad(color_term)
             context = {'form': form, 'output': output,
                         'listings': listings,
-                        'output': output}
+                        'search': search_term}
             return render(request, 'search.html', context)
     else:
         form = forms.UploadFileForm()
@@ -84,9 +117,16 @@ def zobello(request):
         output = 'shorts'
     elif 'shoe' in output:
         output = 'shoe'
+    elif 'jersey' in output:
+        output = 'tee'
+    elif 'cardigan' in output:
+        output = 'shirt'
     search_term = output
     listings = scrape_zobello(search_term)
-    context = {'search_term': search_term,
+    if len(listings) == 0:
+        search_term = search_term.split(' ')[0]
+        listings = scrape(search_term.split(' ')[0])
+    context = {'search': search_term,
                 'listings': listings}
     if request.method == 'POST':
         form = forms.UploadFileForm(request.POST, request.FILES)
@@ -96,15 +136,24 @@ def zobello(request):
                 output = 'shorts'
             elif 'shoe' in output:
                 output = 'shoe'
+            elif 'jersey' in output:
+                output = 'tee'
+            elif 'cardigan' in output:
+                output = 'shirt'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
                 search_term += i
+            color_term = detect_color(request.FILES['image'])
+            search_term += " " + color_term
             search_global = search_term
             listings = scrape_zobello(search_term)
+            if len(listings) == 0:
+                search_term = color_term
+                listings = scrape_zobello(color_term)
             context = {'form': form, 'output': output,
                         'listings': listings,
-                        'output': output}
+                        'search': search_term}
             return render(request, 'search.html', context)
     else:
         form = forms.UploadFileForm()
@@ -119,6 +168,10 @@ def randomize(request):
         output = 'shorts'
     elif 'shoe' in output:
         output = 'shoe'
+    elif 'jersey' in output:
+        output = 'tee'
+    elif 'cardigan' in output:
+        output = 'shirt'
     search_term = output
     listings_zob = scrape_zobello(search_term)
     listings_lime = scrape_limeroad(search_term)
@@ -127,7 +180,7 @@ def randomize(request):
         listings = listings_lime[:5] + listings_bewa[:5]
     else:
         listings = listings_lime[:5] + listings_zob[:5]
-    context = {'search_term': search_term,
+    context = {'search': search_term,
                 'listings': listings}
     if request.method == 'POST':
         form = forms.UploadFileForm(request.POST, request.FILES)
@@ -137,10 +190,15 @@ def randomize(request):
                 output = 'shorts'
             elif 'shoe' in output:
                 output = 'shoe'
+            elif 'jersey' in output:
+                output = 'tee'
+            elif 'cardigan' in output:
+                output = 'shirt'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
                 search_term += i
+            search_term += " " + detect_color(request.FILES['image'])
             search_global = search_term
             listings_zob = scrape_zobello(search_term)
             listings_lime = scrape_limeroad(search_term)
@@ -151,7 +209,7 @@ def randomize(request):
                 listings = listings_lime[:5] + listings_zob[:5]
             context = {'form': form, 'output': output,
                         'listings': listings,
-                        'output': output}
+                        'search': search_term}
             return render(request, 'search.html', context)
     else:
         form = forms.UploadFileForm()
