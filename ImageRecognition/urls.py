@@ -8,5 +8,6 @@ urlpatterns = [
     path('limeroad', views.limeroad, name='limeroad'),
     path('zobello', views.zobello, name='zobello'),
     path('randomize', views.randomize, name='randomize'),
-    path('landing', views.landing, name="landing")
+    path('landing', views.landing, name="landing"),
+    path('trending', views.trending, name="trending"),
 ]

@@ -209,3 +209,31 @@ def randomize(request):
 
 def landing(request):
     return render(request, 'landing.html')
+
+
+def trending(request):
+    search_list = Search.objects.all()
+    if len(search_list) > 10:
+        search_list = search_list[:10]
+    search_list = list(search_list)
+    # print(search_list)
+    for i in range(len(search_list)):
+        for j in range(len(search_list)):
+            if len(search_list[i].users.all()) > len(search_list[j].users.all()):
+                temp = search_list[j]
+                search_list[j] = search_list[i]
+                search_list[i] = temp 
+    max_1 = search_list[0].search_term
+    max_2 = search_list[2].search_term
+    listings_1 = scrape_limeroad(max_1)
+    listings_2 = scrape_limeroad(max_2)
+    listings = listings_1 + listings_2
+
+    context = {
+        'search': max_1 + ' and ' + max_2,
+        'listings': listings,
+    }
+
+    return render(request, 'trending.html', context)
+
+    
