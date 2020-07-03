@@ -85,7 +85,7 @@
     z-index: 999;
     height: 66px;
     background-color: transparent;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .navbar a{  
