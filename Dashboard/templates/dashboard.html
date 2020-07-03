@@ -5,7 +5,11 @@
 
 
 {% block content  %}
-    <h1 class="text-center mt-5">Previously Searched</h1>
+{% if not user.is_authenticated %}
+<h1 class="text-center mt-5">Please Login To Acess Dashboard</h1>
+{% else %}
+<h1 class="text-center mt-5">Previously Searched</h1>
+{% endif %}
         {% if listings %}
         <div class="container products-found">
             <!-- Insert product cards here! -->
@@ -24,5 +28,4 @@
         </div>
         {% endif %}
     </div>
-
 {% endblock %}

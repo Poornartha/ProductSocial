@@ -15,19 +15,21 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg transparent navbar-inverse">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+    <nav id="navbar" class="navbar custom-light navbar-expand-lg transparent navbar-inverse">
+        
+        <a class="navbar-brand ml-auto" href="#">Product Social</a>
+
+        <button class="navbar-toggler navbar-light ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand ml-auto" href="#">Product Social</a>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item current">
                     <a class="nav-link" href="#">Search</a>
                 </li>
                 <li class="nav-item">
@@ -37,7 +39,6 @@
                     <a class="nav-link" href="#">Recommendations</a>
                 </li>
             </ul>
-        </div>
 
         
         {% if user.is_authenticated %}

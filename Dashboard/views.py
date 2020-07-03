@@ -5,14 +5,15 @@ from .operations import scrape, scrape_limeroad, scrape_zobello
 def dashboard(request):
     
     search_terms = []
+    search_now = ''
     if request.user.is_active:
         search_terms = request.user.search_set.all()
-    
-    search_now = search_terms[len(search_terms) - 1].search_term
-
-    listings = scrape(search_now)
-    listings += scrape_limeroad(search_now)
-    listings += scrape_zobello(search_now)
+        search_now = search_terms[len(search_terms) - 1].search_term
+        listings = scrape(search_now)
+        listings += scrape_limeroad(search_now)
+        listings += scrape_zobello(search_now)
+    else:
+        listings = []
 
     context = {
         'listings': listings,
