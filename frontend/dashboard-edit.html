@@ -48,41 +48,69 @@
     <div class="sidebar">
         <img class="profile" src="https://demos.creative-tim.com/bs3/material-kit-pro/assets/img/placeholder.jpg" alt="" height="80" width="80">
         <p>Welcome, First Name!</p>
-        <a href="#" class="">Recently Searched</a>
-        <a href="#" class="active">Recommendations</a>
+        <a href="#" class="active">Recently Searched</a>
+        <a href="#" class="">Recommendations</a>
         <a href="#" class="">Edit Profile</a>
     </div>
 
     <div class="content">
-        <h2>You might also like!</h2>
-        <hr>
-        <div class="info-message">
-            Choose your colour and get your recommended clothings!
-        </div>
-        <div class="colour-select">
-            <button class="rec-colors" style="background-color: yellow;"></button>
-            <button class="rec-colors" style="background-color: red;"></button>
-            <button class="rec-colors" style="background-color: greenyellow;"></button>
-            <button class="rec-colors" style="background-color: purple;"></button>
-            <button class="rec-colors" style="background-color: blue;"></button>
-            <button class="rec-colors" style="background-color: black;"></button>
-            <ion-icon name="sync-circle-outline" size="large" style="margin-top: 10px;"></ion-icon>
-        </div>
-        <hr>
-        <div class="products-found">
-            <!-- Insert product cards here! -->
-            <div class="card" style="width: 18rem">
-                <img src="./staticfiles/img/bg10.jpg" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Blue Jeans</h5>
-                    <div class="container">
-                        <h5>Rs 2500</h5>
-                        <a href="#" class="btn btn-primary glow-button">Visit Store</a>
-                    </div>
-                    
-                </div>
+        
+        <div id="sign-up">
+            <div class="primary-description" style="margin-top: 10px !important;">
+                Edit profile
             </div>
-        </div>        
+            <br>
+            <form action="#">
+                <div class="form-field">
+                    <label for="first-name">First Name</label>
+                    <input type="name" id="first-name" placeholder="First name">
+                </div>
+                <div class="form-field">
+                    <label for="second-name">Second Name</label>
+                    <input type="name" id="second-name" placeholder="Second name">
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="username" id="username" placeholder="Username">
+                </div>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-field">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+
+                <div class="form-field">
+                    <label for="colour">Enter your favourite colour</label>
+                    <select id="colour" name="colour">
+                        <option value="volvo">Red</option>
+                        <option value="saab">Black</option>
+                        <option value="fiat">Blue</option>
+                        <option value="audi">Yellow</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="clothing">Enter your favourite apparel</label>
+                    <select id="clothing" name="clothing">
+                        <option value="volvo">Shirts</option>
+                        <option value="saab">Tee</option>
+                        <option value="fiat">Jeans</option>
+                        <option value="audi">Backpacks</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-field">
+                    <input type="submit" value="Update" class="btn-primary btn glow-button">
+                </div>
+            </form>
+        </div>
     </div>
 
 

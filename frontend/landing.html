@@ -18,7 +18,9 @@
 
         <a class="navbar-brand ml-auto" href="#">Product Social</a>
 
-        <button class="navbar-toggler navbar-dark ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-dark ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -63,13 +65,8 @@
     </section>
 
 
-    <div class="wrapper">
-        <div class="primary-description">
-            More than just a tool
-        </div>
-        <div class="secondary-description">
-            Explore what else we can do for you
-        </div>
+    <!-- <div class="wrapper">
+        
         <div class="grid">
             <div class="grid-element">
                 <ion-icon name="camera-reverse-outline" size="large"></ion-icon>
@@ -93,53 +90,92 @@
                 <p class="grid-secondary">Search for products using their pictures</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="wrapper">
         <div class="primary-description">
-            Customisable UI Dashboard
+            More than just a tool
+        </div>
+        <div class="secondary-description">
+            Explore what else we can do for you
+        </div>
+        <div class="container">
+            <div class="feature col-md-6 red">
+                <span class="circle">
+                    <ion-icon name="camera-reverse-outline" size="large"></ion-icon>
+                </span>
+                <h3>Reverse Image Search</h3>
+                <p>Search for products using their pictures</p>
+            </div>
+            <div class="feature col-md-6 blue">
+                <span class="circle">
+                    <ion-icon name="person-outline" size="large"></ion-icon>
+                </span>
+                <h3>Personalised Recommendations</h3>
+                <p>CloudCheckr provides summary and detailed usage statistics for resources.</p>
+            </div>
+            <div class="feature col-md-6 yellow">
+                <span class="circle">
+                    <ion-icon name="trending-up-outline" size="large"></ion-icon>
+                </span>
+                <h3>Top Trending Products</h3>
+                <p>CloudCheckr provides summary and detailed usage statistics for resources.</p>
+            </div>
+            <div class="feature col-md-6 green">
+                <span class="circle">
+                    <ion-icon name="time-outline" size="large"></ion-icon>
+                </span>
+                <h3>Save Time</h3>
+                <p>CloudCheckr provides summary and detailed usage statistics for resources.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div class="primary-description">
+            
         </div>
     </div>
 
     <script type="text/javascript">
 
-    /* Sticky Navbar */
-    var nav = document.getElementById("navbar");
-    var landing = document.getElementById("navbar-landing");
-    var sticky;
-    if(nav != null) sticky = nav.offsetTop;
-    else sticky = landing.offsetTop;
+        /* Sticky Navbar */
+        var nav = document.getElementById("navbar");
+        var landing = document.getElementById("navbar-landing");
+        var sticky;
+        if (nav != null) sticky = nav.offsetTop;
+        else sticky = landing.offsetTop;
 
 
-    window.onscroll = () => {
-        if (window.pageYOffset > sticky) {
-            if(nav != null) nav.classList.add("sticky");
-            else {
-                landing.classList.add("sticky");
-                landing.classList.add("custom-light");
-                landing.classList.remove("custom-dark");
+        window.onscroll = () => {
+            if (window.pageYOffset > sticky) {
+                if (nav != null) nav.classList.add("sticky");
+                else {
+                    landing.classList.add("sticky");
+                    landing.classList.add("custom-light");
+                    landing.classList.remove("custom-dark");
+                }
             }
-        }
-        else {
-            if(nav != null) nav.classList.remove("sticky");
             else {
-                landing.classList.remove("sticky");
-                landing.classList.add("custom-dark");
-                landing.classList.remove("custom-light");
+                if (nav != null) nav.classList.remove("sticky");
+                else {
+                    landing.classList.remove("sticky");
+                    landing.classList.add("custom-dark");
+                    landing.classList.remove("custom-light");
+                }
             }
+        };
+
+        /* Login Signup */
+        function gotoSignUp() {
+            document.getElementById("sign-up").style.display = "inline";
+            document.getElementById("login").style.display = "none";
         }
-    };
 
-    /* Login Signup */
-    function gotoSignUp() {
-        document.getElementById("sign-up").style.display = "inline";
-        document.getElementById("login").style.display = "none";
-    }
-
-    function gotoLogin() {
-        document.getElementById("sign-up").style.display = "none";
-        document.getElementById("login").style.display = "inline";
-    }
+        function gotoLogin() {
+            document.getElementById("sign-up").style.display = "none";
+            document.getElementById("login").style.display = "inline";
+        }
 
     </script>
 
