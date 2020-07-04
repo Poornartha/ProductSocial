@@ -259,9 +259,11 @@ def search_bewakoof(request):
             elif 'cardigan' in output:
                 output = 'shirt'
             search_term = output
-            search_global = search_term
+            
             if request.user.is_active:
                 search_term = request.user.customer.gender + ' ' + search_term
+
+            search_global = search_term
             listings = scrape(search_term)
 
             if request.user.is_active and search_term != '':
@@ -301,9 +303,10 @@ def search_limeroad(request):
             elif 'cardigan' in output:
                 output = 'shirt'
             search_term = output
-            search_global = search_term
+            
             if request.user.is_active:
                 search_term = request.user.customer.gender + ' ' + search_term
+            search_global = search_term
             listings = scrape_limeroad(search_term)
 
             if request.user.is_active and search_term != '':
@@ -345,6 +348,7 @@ def search_zobello(request):
             search_global = search_term
             if request.user.is_active:
                 search_term = request.user.customer.gender + ' ' + search_term
+            search_global = search_term
             listings = scrape_zobello(search_term)
 
             if request.user.is_active and search_term != '':

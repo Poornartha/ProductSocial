@@ -16,13 +16,11 @@ class CustomerCreationForm(UserCreationForm):
         ('green', 'Green'),
         ('black', 'Black'),
         ('red', 'Red'),
-        ('pink', 'Pink'),
+        ('white', 'White'),
         ('yellow', 'Yellow'),
     ]
     FAVOURITE_PRODUCT_CHOICES = [
         ('jeans', 'Jeans'),
-        ('shirt', 'Shirt'),
-        ('trousers', 'Trousers'),
         ('shorts', 'Shorts'),
         ('tee', 'T-shirts'),
         ('shoes', 'Shoes'),

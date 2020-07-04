@@ -9,6 +9,7 @@
             <p>Welcome, Stranger!</p>
         {% endif %}
         <a href="#" class="active">Recently Searched</a>
+        
         {% if user.customer.favourite_color == 'red' %}
         <a href="{% url 'Dashboard:red' %}" class="">Recommendations</a>
         {% elif user.customer.favourite_color == 'blue' %}
