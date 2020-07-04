@@ -22,13 +22,13 @@ def dashboard(request):
                 listings1 = scrape(search_now)
             else:
                 listings1 = scrape_limeroad(search_now)
-            if len(search_terms) - 2 > 0: 
+            if len(search_terms) - 2 >= 0: 
                 search_now = search_terms[len(search_terms) - 2].search_term
                 if 'tee' in search_now:
                     listings2 = scrape(search_now)
                 else:
                     listings2 = scrape_limeroad(search_now)
-            elif len(search_terms) - 3 > 0:
+            elif len(search_terms) - 3 >= 0:
                 search_now = search_terms[len(search_terms) - 3].search_term
                 if 'tee' in search_now:
                     listings3 = scrape(search_now)

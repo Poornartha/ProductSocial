@@ -179,6 +179,10 @@ li {
   box-shadow: 0 5px 15px #f7f8fc;
 }
 
+.glow-button {
+  color: white;
+}
+
 /* Descriptions */
 .description {
   margin: 0 40px;
