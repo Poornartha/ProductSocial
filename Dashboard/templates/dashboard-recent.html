@@ -9,7 +9,20 @@
             <p>Welcome, Stranger!</p>
         {% endif %}
         <a href="#" class="active">Recently Searched</a>
-        <a href="{% url 'shirt' %}" class="">Recommendations</a>
+        {% if user.customer.favourite_item == 'shirt' %}
+        <a href="{% url 'Dashboard:shirt' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_item == 'jeans' %}
+        <a href="{% url 'Dashboard:jeans' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_item == 'trousers' %}
+        <a href="{% url 'Dashboard:trousers' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_item == 'shorts' %}
+        <a href="{% url 'Dashboard:shorts' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_item == 'shoes' %}
+        <a href="{% url 'Dashboard:shoes' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_item == 'tee' %}
+        <a href="{% url 'Dashboard:tee' %}" class="">Recommendations</a>
+        {%endif%}
+
         <a href="#" class="">Edit Profile</a>
     </div>
 
@@ -21,12 +34,12 @@
                 {{search1}}
                 <ion-icon name="arrow-forward-circle-outline"></ion-icon>
             </a>
-            
+
         </div>
         {% if not user.is_authenticated %}
             <h2>Login To View Dashboard</h2>
         {% else %}
-        
+
         <div class="products-found">
             <!-- Insert product cards here! -->
             {% if listings1 %}
@@ -39,7 +52,7 @@
                         <h5>{{ post.1 }}</h5>
                         <a href="{{ post.3 }}" class="btn btn-primary glow-button">Visit Store</a>
                     </div>
-                    
+
                 </div>
             </div>
             {% endfor %}
@@ -65,7 +78,7 @@
                         <h5>{{ post.1 }}</h5>
                         <a href="{{ post.3 }}" class="btn btn-primary glow-button">Visit Store</a>
                     </div>
-                    
+
                 </div>
             </div>
             {% endfor %}

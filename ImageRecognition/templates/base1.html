@@ -17,7 +17,7 @@
 
     <nav id="navbar" class="navbar custom-light navbar-expand-lg transparent navbar-inverse">
 
-        <a class="navbar-brand ml-auto" href="{% url 'ImageSearch:landing' %}">Product Social</a>
+        <a class="navbar-brand ml-auto" href="{% url 'search:landing' %}">Product Social</a>
 
         <button class="navbar-toggler navbar-light ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +27,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{%url 'ImageSearch:landing'%}">Home</a>
+                    <a class="nav-link" href="{%url 'search:landing'%}">Home</a>
                 </li>
                 <li class="nav-item current">
-                    <a class="nav-link" href="#">Search</a>
+                    <a class="nav-link" href="{%url 'search:home'%}">Search</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{%url 'ImageSearch:trending'%}">Trending</a>
+                    <a class="nav-link" href="{%url 'search:trending'%}">Trending</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Recommendations</a>

@@ -8,7 +8,7 @@
         {% else %}
             <p>Welcome, Stranger!</p>
         {% endif %}
-        <a href="{% url 'dashboard' %}" class="">Recently Searched</a>
+        <a href="{% url 'Dashboard:dashboard' %}" class="">Recently Searched</a>
         <a href="#" class="active">Recommendations</a>
         <a href="#" class="">Edit Profile</a>
     </div>
@@ -26,12 +26,12 @@
             We Know Your Faourite Clothing is {{search}}. Choose Your Color.
         </div>
         <div class="colour-select">
-            <a href="{% url 'yellow' %}"><button class="rec-colors" style="background-color: yellow;"></button></a>
-            <a href="{% url 'red' %}"><button class="rec-colors" style="background-color: red;"></button></a>
-            <a href="{% url 'green' %}"><button class="rec-colors" style="background-color: greenyellow;"></button></a>
-            <a href="{% url 'white' %}"><button class="rec-colors" style="background-color:white; border-style: solid; border-width: thin; border-color: black;"></button></a>
-            <a href="{% url 'blue' %}"><button class="rec-colors" style="background-color: blue;"></button></a>
-            <a href="{% url 'black' %}"><button class="rec-colors" style="background-color: black;"></button></a>
+            <a href="{% url 'Dashboard:yellow' %}"><button class="rec-colors" style="background-color: yellow;"></button></a>
+            <a href="{% url 'Dashboard:red' %}"><button class="rec-colors" style="background-color: red;"></button></a>
+            <a href="{% url 'Dashboard:green' %}"><button class="rec-colors" style="background-color: greenyellow;"></button></a>
+            <a href="{% url 'Dashboard:white' %}"><button class="rec-colors" style="background-color:white; border-style: solid; border-width: thin; border-color: black;"></button></a>
+            <a href="{% url 'Dashboard:blue' %}"><button class="rec-colors" style="background-color: blue;"></button></a>
+            <a href="{% url 'Dashboard:black' %}"><button class="rec-colors" style="background-color: black;"></button></a>
             <ion-icon name="sync-circle-outline" size="large" style="margin-top: 10px;"></ion-icon>
         </div>
         <hr>
@@ -47,12 +47,12 @@
                         <h5>{{ post.1 }}</h5>
                         <a href="{{ post.3 }}" class="btn btn-primary glow-button">Visit Store</a>
                     </div>
-                    
+
                 </div>
             </div>
             {% endfor %}
             {% endif %}
-        </div>        
+        </div>
     </div>
     {% endif %}
 {% endblock %}
