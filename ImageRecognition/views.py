@@ -39,6 +39,8 @@ def home(request):
                 search_term += i
             color_term = detect_color(request.FILES['image'])
             search_term += " " + color_term
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             search_global = search_term
             listings = scrape(search_term)
             if len(listings) == 0:
@@ -87,6 +89,8 @@ def limeroad(request):
                 search_term += i
             color_term = detect_color(request.FILES['image'])
             search_term += " " + color_term
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             search_global = search_term
             listings = scrape_limeroad(search_term)
             if len(listings) == 0:
@@ -134,6 +138,8 @@ def zobello(request):
                 search_term += i
             color_term = detect_color(request.FILES['image'])
             search_term += " " + color_term
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             search_global = search_term
             listings = scrape_zobello(search_term)
             if len(listings) == 0:
@@ -185,6 +191,8 @@ def randomize(request):
             for i in to_search:
                 search_term += i
             search_term += " " + detect_color(request.FILES['image'])
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             search_global = search_term
 
             if request.user.is_active and search_term != '':
@@ -252,6 +260,8 @@ def search_bewakoof(request):
                 output = 'shirt'
             search_term = output
             search_global = search_term
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             listings = scrape(search_term)
 
             if request.user.is_active and search_term != '':
@@ -292,6 +302,8 @@ def search_limeroad(request):
                 output = 'shirt'
             search_term = output
             search_global = search_term
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             listings = scrape_limeroad(search_term)
 
             if request.user.is_active and search_term != '':
@@ -331,6 +343,8 @@ def search_zobello(request):
                 output = 'shirt'
             search_term = output
             search_global = search_term
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             listings = scrape_zobello(search_term)
 
             if request.user.is_active and search_term != '':
@@ -370,6 +384,8 @@ def search_random(request):
                 output = 'shirt'
             search_term = output
             search_global = search_term
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             listings = scrape(search_term)
 
             if request.user.is_active and search_term != '':
@@ -412,6 +428,8 @@ def search_randomize(request):
                 output = 'shirt'
             
             search_term = output
+            if request.user.is_active:
+                search_term = request.user.customer.gender + ' ' + search_term
             search_global = search_term
 
             if request.user.is_active and search_term != '':
