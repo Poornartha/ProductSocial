@@ -1,0 +1,51 @@
+{% extends 'base1.html' %}
+
+{% load static %}
+
+
+{% block content  %}
+    <div class="container">
+        <div class="description">
+            <div class="row primary-description col-md">
+                Spend Less Time Searching!
+            </div>
+            <div class="row secondary-description col-md ml-5">
+                Search For The Product You Want.
+            </div>
+            <form method="post">
+                <div class="custom-file">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary glow-button upload"> Search </button>
+            </form>
+        </div>
+    </div>
+    <h2 class="text-center">{{ search | title }}</h2>
+    <div class="products-found">
+        <div class="container">
+            <a href="{% url 'search-bewakoof' %}"><img src="{% static '/img/bewakoof-logo.png' %}" alt="" height="20"></a>
+            <a href="{% url 'search-limeroad' %}"><img src="{% static '/img/limeroad-logo.jpg' %}" alt="" height="120"></a>
+            <a href="{% url 'search-zobello' %}"><img src="{% static '/img/zobello-logo.png' %}" alt="" height="80"></a>
+            <a href="{% url 'search-random' %}"><img src="{% static '/img/image_placeholder.jpg' %}" alt="" height="40"></a>
+        </div>
+        {% if listings %}
+        <div class="container products-found">
+            <!-- Insert product cards here! -->
+            {% for post in listings %}
+            <div class="card" style="width: 18rem">
+                <img src="{{ post.2 }}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.0 }}</h5>
+                    <div class="container">
+                        <h5>{{ post.1 }}</h5>
+                        <a href="{{ post.3 }}" class="btn btn-primary glow-button" target="_blank">Visit Store</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
