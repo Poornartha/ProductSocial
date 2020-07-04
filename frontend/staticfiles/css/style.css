@@ -61,6 +61,13 @@
     color: rgba(255, 255, 255, 0.377) !important;
 }
 
+/* ICONS */
+
+ion-icon {
+    color: #b8336a;
+    margin: 8px 0px 0px 5px;
+}
+
 /* NAVBAR */
 
 .custom-light a {
@@ -579,8 +586,60 @@ div.content {
   }
 }
 
-#b8336a
-    2: #c490d1
-    3: #acacde
-    4: #abdafc
-    5: #e5fcff
+/* CONTENTS */
+
+.content {
+    margin: 0 30px;
+    padding: 30px !important;
+}
+
+.products-found {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-name {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.product-name a {
+    color: #b8336a;
+    font-size: 20px !important;
+    font-weight: 500;
+}
+
+/* Recommendations */
+
+.colour-select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.rec-colors {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.rec-colors:hover {
+    border: 5px solid #fff;
+}
+
+.rec-colors:focus {
+    border: 5px solid #fff;
+    outline: none;
+}
+
+.info-message {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 17px;
+    font-weight: 700;
+}

@@ -48,17 +48,46 @@
     <div class="sidebar">
         <img class="profile" src="staticfiles/img/default.png" alt="" height="80" width="80">
         <p>Welcome, First Name!</p>
-        <a href="#" class="active">Recently Searched</a>
-        <a href="#" class="">Recommendations</a>
+        <a href="#" class="">Recently Searched</a>
+        <a href="#" class="active">Recommendations</a>
         <a href="#" class="">Edit Profile</a>
     </div>
 
     <div class="content">
-        <h2>Recent Searches</h2>
+        <h2>You might also like!</h2>
+        <hr>
+        <div class="info-message">
+            Choose your colour and get your recommended clothings!
+        </div>
+        <div class="colour-select">
+            <button class="rec-colors" style="background-color: yellow;"></button>
+            <button class="rec-colors" style="background-color: red;"></button>
+            <button class="rec-colors" style="background-color: greenyellow;"></button>
+            <button class="rec-colors" style="background-color: purple;"></button>
+            <button class="rec-colors" style="background-color: blue;"></button>
+            <button class="rec-colors" style="background-color: black;"></button>
+            <ion-icon name="sync-circle-outline" size="large" style="margin-top: 10px;"></ion-icon>
+        </div>
+        <hr>
+        <div class="products-found">
+            <!-- Insert product cards here! -->
+            <div class="card" style="width: 18rem">
+                <img src="./staticfiles/img/bg10.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Blue Jeans</h5>
+                    <div class="container">
+                        <h5>Rs 2500</h5>
+                        <a href="#" class="btn btn-primary glow-button">Visit Store</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>        
     </div>
 
 
     <script src="staticfiles/js/app.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
