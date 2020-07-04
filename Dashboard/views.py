@@ -19,21 +19,21 @@ def dashboard(request):
         print(search_terms)
         if search_terms:
             search_now = search_terms[len(search_terms) - 1].search_term
-            if 'tee' in search_now:
+            if 'tee' in search_now.lower():
                 listings1 = scrape(search_now)
             else:
                 listings1 = scrape_limeroad(search_now)
             search_now1 = search_now
             if len(search_terms) - 2 >= 0:
                 search_now = search_terms[len(search_terms) - 2].search_term
-                if 'tee' in search_now:
+                if 'tee' in search_now.lower():
                     listings2 = scrape(search_now)
                 else:
                     listings2 = scrape_limeroad(search_now)
                 search_now2 = search_now
             elif len(search_terms) - 3 >= 0:
                 search_now = search_terms[len(search_terms) - 3].search_term
-                if 'tee' in search_now:
+                if 'tee' in search_now.lower():
                     listings3 = scrape(search_now)
                 else:
                     listings3 = scrape_limeroad(search_now)
@@ -73,11 +73,11 @@ def shirt(request):
         customer = request.user.customer
         search_color = customer.favourite_color
         search_prod = 'shirt'
-        search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
-        listings = scrape_limeroad(search_term)
+        listings = scrape(search_term)
+        listings += scrape_limeroad(search_term)
         listings += scrape_zobello(search_term)
-        listings += scrape(search_term)
     else:
         listings = []
 
@@ -96,6 +96,7 @@ def shoes(request):
         search_color = customer.favourite_color
         search_prod = 'shoes'
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
         listings = scrape_limeroad(search_term)
         listings += scrape_zobello(search_term)
@@ -118,6 +119,7 @@ def shorts(request):
         search_color = customer.favourite_color
         search_prod = 'shorts'
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
         listings = scrape_limeroad(search_term)
         listings += scrape_zobello(search_term)
@@ -140,6 +142,7 @@ def jeans(request):
         search_color = customer.favourite_color
         search_prod = 'jeans'
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
         listings = scrape_limeroad(search_term)
         listings += scrape_zobello(search_term)
@@ -164,10 +167,16 @@ def blue(request):
         search_color = 'blue'
         search_prod = customer.favourite_item
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_prod)
-        listings = scrape_limeroad(search_term)
-        listings += scrape_zobello(search_term)
-        listings += scrape(search_term)
+        if request.user.customer.gender == 'male':
+            listings = scrape(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape_limeroad(search_term)
+        else:
+            listings = scrape_limeroad(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape(search_term)
     else:
         listings = []
 
@@ -186,10 +195,16 @@ def red(request):
         search_color = 'red'
         search_prod = customer.favourite_item
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
-        listings = scrape_limeroad(search_term)
-        listings += scrape_zobello(search_term)
-        listings += scrape(search_term)
+        if request.user.customer.gender == 'male':
+            listings = scrape(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape_limeroad(search_term)
+        else:
+            listings = scrape_limeroad(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape(search_term)
     else:
         listings = []
 
@@ -208,10 +223,16 @@ def green(request):
         search_color = 'green'
         search_prod = customer.favourite_item
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
-        listings = scrape_limeroad(search_term)
-        listings += scrape_zobello(search_term)
-        listings += scrape(search_term)
+        if request.user.customer.gender == 'male':
+            listings = scrape(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape_limeroad(search_term)
+        else:
+            listings = scrape_limeroad(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape(search_term)
     else:
         listings = []
 
@@ -230,10 +251,16 @@ def black(request):
         search_color = 'black'
         search_prod = customer.favourite_item
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
-        listings = scrape_limeroad(search_term)
-        listings += scrape_zobello(search_term)
-        listings += scrape(search_term)
+        if request.user.customer.gender == 'male':
+            listings = scrape(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape_limeroad(search_term)
+        else:
+            listings = scrape_limeroad(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape(search_term)
     else:
         listings = []
 
@@ -253,10 +280,16 @@ def yellow(request):
         search_color = 'yellow'
         search_prod = customer.favourite_item
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
-        listings = scrape_limeroad(search_term)
-        listings += scrape_zobello(search_term)
-        listings += scrape(search_term)
+        if request.user.customer.gender == 'male':
+            listings = scrape(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape_limeroad(search_term)
+        else:
+            listings = scrape_limeroad(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape(search_term)
     else:
         listings = []
 
@@ -276,10 +309,16 @@ def white(request):
         search_color = 'white'
         search_prod = customer.favourite_item
         search_term = search_color + " " + search_prod
+        search_term = request.user.customer.gender + ' ' + search_color + " " + search_prod
         print(search_term)
-        listings = scrape_limeroad(search_term)
-        listings += scrape_zobello(search_term)
-        listings += scrape(search_term)
+        if request.user.customer.gender == 'male':
+            listings = scrape(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape_limeroad(search_term)
+        else:
+            listings = scrape_limeroad(search_term)
+            listings += scrape_zobello(search_term)
+            listings += scrape(search_term)
     else:
         listings = []
 
