@@ -1,0 +1,32 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+
+
+{% block content  %}
+{% if not user.is_authenticated %}
+<h1 class="text-center mt-5">Please Login To Acess Dashboard</h1>
+{% else %}
+<h1 class="text-center mt-5">Previously Searched</h1>
+<h2 class="text-center mt-5">{{ search }}</h2>
+{% endif %}
+        {% if listings %}
+        <div class="container products-found">
+            <!-- Insert product cards here! -->
+            {% for post in listings %}
+            <div class="card" style="width: 18rem">
+                <img src="{{ post.2 }}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.0 }}</h5>
+                    <div class="container">
+                        <h5>{{ post.1 }}</h5>
+                        <a href="{{ post.3 }}" class="btn btn-primary glow-button" target="_blank">Visit Store</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

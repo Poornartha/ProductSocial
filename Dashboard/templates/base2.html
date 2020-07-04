@@ -9,6 +9,143 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <style>
+        /* SIDEBAR */
+
+.profile {
+    margin: 30px auto;
+    border-radius: 50%;
+    }
+    
+    .sidebar {
+    margin: 10px;
+    border-radius: 5px;
+    padding: 0;
+    width: 200px;
+    background-color: #b8336a;
+    position: fixed;
+    height: 80%;
+    overflow: auto;
+    top: 66px;
+    text-align: center;
+    }
+    
+    /* Sidebar links */
+    .sidebar a {
+    display: block;
+    color: #ffffffb7 !important;
+    padding: 16px;
+    text-decoration: none;
+    }
+    
+    .sidebar p {
+    color: #fff;
+    }
+    /* Active/current link */
+    .sidebar a.active {
+    background-color: #f7f8fc;
+    font-weight: 500;
+    color: #b8336a !important;
+    }
+    
+    /* Links on mouse-over */
+    .sidebar a:hover:not(.active) {
+    background-color: #acacde63;
+    font-weight: 500;
+    color: #fff !important;
+    }
+    
+    /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+    div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+    }
+    
+    /* On screens that are less than 700px wide, make the sidebar into a topbar */
+    @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 80%;
+      height: auto;
+      position: relative;
+      top: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin: 10px;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+    }
+    
+    /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+    @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+      
+    }
+    }
+    
+    /* CONTENTS */
+    
+    .content {
+      margin: 0 30px;
+      padding: 30px !important;
+    }
+    
+    .products-found {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .product-name {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .product-name a {
+      color: #b8336a;
+      font-size: 20px !important;
+      font-weight: 500;
+    }
+    
+    /* Recommendations */
+    
+    .colour-select {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+    }
+    
+    .rec-colors {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      margin: 20px;
+    }
+    
+    .rec-colors:hover {
+      border: 5px solid #fff;
+    }
+    
+    .rec-colors:focus {
+      border: 5px solid #fff;
+      outline: none;
+    }
+    
+    .info-message {
+      text-align: center;
+      margin: 0 auto;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    </style>
 
     <title>Product Social</title>
 </head>
@@ -30,7 +167,7 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item current">
-                    <a class="nav-link" href="#">Search</a>
+                    <a class="nav-link" href="{% url 'search:limeroad' %}">Search</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Trending</a>
@@ -44,7 +181,7 @@
             {% if user.is_authenticated %}
                 <a href="{% url 'accounts:logout' %}" style="color: white">Log Out</a>
             {% else %}
-                <a href="{% url 'dashboard' %}" style="color: white">Login</a>
+                <a href="{% url 'accounts:login' %}" style="color: white">Login</a>
             {% endif %}
         </button>
     </nav>
