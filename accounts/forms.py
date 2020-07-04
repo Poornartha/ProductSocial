@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django import forms
 
 class CustomerCreationForm(UserCreationForm):
@@ -33,8 +34,8 @@ class CustomerCreationForm(UserCreationForm):
         choices=FAVOURITE_PRODUCT_CHOICES,
     )
 
-    class Meta:
-        fields = ('first_name', 'last_name', 'username', 'email', 'favourite_colour', 'fav_product', 'password1', 'password2')
+    class Meta(UserCreationForm.Meta):
+        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'username', 'email', 'favourite_colour', 'fav_product', 'password1', 'password2')
         model = get_user_model()
 
     def __init__(self, *args, **kwargs):
@@ -48,7 +49,7 @@ class CustomerCreationForm(UserCreationForm):
         self.fields['password1'].label = 'Password'
         self.fields['password2'].label = 'Confirm Password'
 
-        self.fields['first_name'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['first_name'].widget.attrs.update({'class' : 'form-field;'})
         self.fields['last_name'].widget.attrs.update({'class' : 'form-field'})
         self.fields['username'].widget.attrs.update({'class' : 'form-field'})
         self.fields['email'].widget.attrs.update({'class' : 'form-field'})

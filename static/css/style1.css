@@ -85,10 +85,7 @@
     z-index: 999;
     height: 66px;
     background-color: transparent;
-}
-
-.collapse {
-    z-index: 999;
+    overflow-x: hidden;
 }
 
 .navbar a{
@@ -246,7 +243,7 @@ section .wave{
     left: 0;
     width: 100%;
     height: 100px;
-    background: url('https://i.imgur.com/oCHtGeR.png');
+    background: url(/frontend/staticfiles/img/wave.png);
     background-size: 1000px 100px;
 }
 
