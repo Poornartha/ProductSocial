@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="sidebar">
-        <img class="profile" src="{% static 'img/defualt.png' %}" alt="" height="80" width="80">
+        <img class="profile" src="https://demos.creative-tim.com/bs3/material-kit-pro/assets/img/placeholder.jpg" alt="" height="80" width="80">
         {% if user.is_authenticated %}
             <p>Welcome, {{user.first_name | title}}!</p>
         {% else %}

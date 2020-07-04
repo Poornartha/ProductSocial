@@ -16,4 +16,5 @@ urlpatterns = [
     path('search-limeroad', views.search_limeroad, name="search-limeroad"),
     path('search-zobello', views.search_zobello, name="search-zobello"),
     path('search-random', views.search_random, name="search-random"),
+    path('trend/<int:pk>/', views.trend, name="trend"),
 ]
