@@ -23,9 +23,10 @@ def SignUp(request):
             password = form.cleaned_data.get('password1')
             favourite_color = form.cleaned_data.get('favourite_colour')
             fav_product = form.cleaned_data.get('fav_product')
+            gender = form.cleaned_data.get('gender')
             user = User.objects.create_user(username=username, password=password, first_name=first_name, last_name=last_name, email=email)
             user.save()
-            customer = Customer.objects.create(user=user, favourite_color=favourite_color, favourite_item=fav_product)
+            customer = Customer.objects.create(user=user, favourite_color=favourite_color, favourite_item=fav_product, gender=gender)
             customer.save()
             return redirect('login')
         else:

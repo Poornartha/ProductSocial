@@ -27,15 +27,22 @@ class CustomerCreationForm(UserCreationForm):
         ('tee', 'T-shirts'),
         ('shoes', 'Shoes'),
     ]
+    GENDER = [
+        ('male', 'Male'),
+        ('female', 'Female'),
+    ]
     favourite_colour = forms.ChoiceField(
         choices=FAVORITE_COLORS_CHOICES,
     )
     fav_product = forms.ChoiceField(
         choices=FAVOURITE_PRODUCT_CHOICES,
     )
+    gender = forms.ChoiceField(
+        choices=GENDER,
+    )
 
     class Meta(UserCreationForm.Meta):
-        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'username', 'email', 'favourite_colour', 'fav_product', 'password1', 'password2')
+        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'username', 'email', 'gender', 'favourite_colour', 'fav_product', 'password1', 'password2')
         model = get_user_model()
 
     def __init__(self, *args, **kwargs):
@@ -48,6 +55,7 @@ class CustomerCreationForm(UserCreationForm):
         self.fields['fav_product'].label = 'Favourite Product'
         self.fields['password1'].label = 'Password'
         self.fields['password2'].label = 'Confirm Password'
+        self.fields['gender'].label = 'Gender'
 
         self.fields['first_name'].widget.attrs.update({'class' : 'form-field;'})
         self.fields['last_name'].widget.attrs.update({'class' : 'form-field'})
@@ -57,6 +65,7 @@ class CustomerCreationForm(UserCreationForm):
         self.fields['fav_product'].widget.attrs.update({'class' : 'form-field'})
         self.fields['password1'].widget.attrs.update({'class' : 'form-field'})
         self.fields['password2'].widget.attrs.update({'class' : 'form-field'})
+        self.fields['gender'].widget.attrs.update({'class' : 'form-field'})
 
     def clean(self):
         cleaned_data = super(UserCreationForm, self).clean()

@@ -2,12 +2,13 @@
 {% load bootstrap3 %}
 {% block content %}
 
-<div class="container">
-  <h1>Log In</h1>
+
+<div class="container" style="border: 1.5px solid grey; border-radius: 10px; max-width: 350px; text-align:center">
   <form class="" method="POST">
+    <h1 style="margin-top: 20px; margin-bottom: 50px;">Log In</h1>
     {% csrf_token %}
     {% bootstrap_form form %}
-    <input type="submit" name="" value="Login" class="btn btn-default">
+    <input type="submit" name="" value="Login" class="btn btn-outline-primary" style="margin-bottom: 15px; margin-top: 13px;">
   </form>
 
 </div>
