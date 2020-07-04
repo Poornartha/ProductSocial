@@ -11,6 +11,46 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 
     <title>Product Social</title>
+
+    <style>
+        .trending-field {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            margin: 10px;
+        }
+      
+        .rank {
+            font-size: 25px;
+            margin: 10px 30px;
+        }
+      
+        .trending-card {
+            padding: 10px 20px;
+            border: 0.5px solid #b8336a;
+            border-radius: 9px;
+        }
+      
+        .trending-card a {
+            color: #2c2c2c;
+        }
+      
+        .trending-card a:hover {
+            background-color: #b8336a;
+            color: #b8336a;
+            font-weight: 700;
+            text-decoration: none;
+        }
+      
+        .trending-list {
+            display: flex;
+            width: 80vw;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin: 10px auto;
+        }
+    </style>
 </head>
 
 <body>
