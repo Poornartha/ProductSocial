@@ -24,10 +24,10 @@
     <h2 class="text-center">{{ search | title }}</h2>
     <div class="products-found">
         <div class="container">
-            <a href="{% url 'search-bewakoof' %}"><img src="{% static '/img/bewakoof-logo.png' %}" alt="" height="20"></a>
-            <a href="{% url 'search-limeroad' %}"><img src="{% static '/img/limeroad-logo.jpg' %}" alt="" height="120"></a>
-            <a href="{% url 'search-zobello' %}"><img src="{% static '/img/zobello-logo.png' %}" alt="" height="80"></a>
-            <a href="{% url 'search-random' %}"><img src="{% static '/img/image_placeholder.jpg' %}" alt="" height="40"></a>
+            <a href="{% url 'search:search-bewakoof' %}"><img src="{% static '/img/bewakoof-logo.png' %}" alt="" height="20"></a>
+            <a href="{% url 'search:search-limeroad' %}"><img src="{% static '/img/limeroad-logo.jpg' %}" alt="" height="120"></a>
+            <a href="{% url 'search:search-zobello' %}"><img src="{% static '/img/zobello-logo.png' %}" alt="" height="80"></a>
+            <a href="{% url 'search:search-random' %}"><img src="{% static '/img/image_placeholder.jpg' %}" alt="" height="40"></a>
         </div>
         {% if listings %}
         <div class="container products-found">
