@@ -2,9 +2,11 @@ from django.contrib import admin
 from django.urls import path, re_path
 from . import views
 
+app_name = 'search'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bewakoof', views.home, name='home'),
+    path('home', views.home, name='home'),
     path('limeroad', views.limeroad, name='limeroad'),
     path('zobello', views.zobello, name='zobello'),
     path('randomize', views.randomize, name='randomize'),

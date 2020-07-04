@@ -9,7 +9,7 @@
             <div class="row primary-description col-md">
                 Spend Less Time Searching!
             </div>
-            <div class="row secondary-description col-md">
+            <div class="row secondary-description col-md text-center ml-5">
                 Take a picture and search for the product
             </div>
             <form method="post" enctype="multipart/form-data">
@@ -24,10 +24,10 @@
     <h2 class="text-center">{{ search | title }}</h2>
     <div class="products-found">
         <div class="container">
-            <a href="{% url 'home' %}"><img src="{% static '/img/bewakoof-logo.png' %}" alt="" height="20"></a>
-            <a href="{% url 'limeroad' %}"><img src="{% static '/img/limeroad-logo.jpg' %}" alt="" height="120"></a>
-            <a href="{% url 'zobello' %}"><img src="{% static '/img/zobello-logo.png' %}" alt="" height="80"></a>
-            <a href="{% url 'randomize' %}"><img src="{% static '/img/image_placeholder.jpg' %}" alt="" height="40"></a>
+            <a href="{% url 'search:home' %}"><img src="{% static '/img/bewakoof-logo.png' %}" alt="" height="20"></a>
+            <a href="{% url 'search:limeroad' %}"><img src="{% static '/img/limeroad-logo.jpg' %}" alt="" height="120"></a>
+            <a href="{% url 'search:zobello' %}"><img src="{% static '/img/zobello-logo.png' %}" alt="" height="80"></a>
+            <a href="{% url 'search:randomize' %}"><img src="{% static '/img/image_placeholder.jpg' %}" alt="" height="40"></a>
         </div>
         {% if listings %}
         <div class="container products-found">

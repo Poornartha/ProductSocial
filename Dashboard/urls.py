@@ -1,6 +1,7 @@
 from . import views
 from django.conf.urls import url
 from django.urls import path, include
+app_name = 'Dashboard'
 
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path('black', views.black, name='black'),
     path('green', views.green, name='green'),
     path('white', views.white, name='white'),
+    path('sugessions', views.suggesions, name='sugessions'),
 ]

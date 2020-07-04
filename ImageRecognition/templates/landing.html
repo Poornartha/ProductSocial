@@ -502,7 +502,7 @@
 
     <nav id="navbar-landing" class="navbar custom-dark navbar-expand-lg transparent navbar-inverse lnavbar">
 
-        <a class="navbar-brand ml-auto" href="#">Product Social</a>
+        <a class="navbar-brand ml-auto" href="{%url 'search:landing'%}">Product Social</a>
 
         <button class="navbar-toggler navbar-dark ml-auto" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -510,19 +510,23 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item current">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{%url 'search:landing'%}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Search</a>
+                    <a class="nav-link" href="{% url 'search:home' %}">Search</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Trending</a>
+                    <a class="nav-link" href="{%url 'search:trending'%}">Trending</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Recommendations</a>
                 </li>
             </ul>
-            <button type="button" class="btn btn-primary glow-button ml-auto">Profile</button>
+            {%if user.is_authenticated%}
+            <button type="button" class="btn btn-primary glow-button ml-auto"><a href="{%url 'Dashboard:dashboard'%}">Profile</a></button>
+            {%else%}
+            <button type="button" class="btn btn-primary glow-button ml-auto"><a href="{%url 'accounts:login'%}">Log In</a></button>
+            {%endif%}
         </div>
 
 
@@ -537,9 +541,7 @@
         </div>
 
         <div class="btn-wrapper">
-            <button class="btn light-button glow-light-button">
-                Get Started
-            </button>
+              <a href="{%url 'search:home'%}" class="btn light-button glow-light-button">Get Started</a>
         </div>
 
         <div class="wave wave1"></div>
