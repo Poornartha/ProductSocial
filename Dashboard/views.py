@@ -82,7 +82,7 @@ def shirt(request):
         'search': search_term,
     }
 
-    return render(request, 'dashboard.html', context)
+    return render(request, 'dashboard-product.html', context)
 
 def shoes(request):
 
@@ -104,7 +104,7 @@ def shoes(request):
         'search': search_term,
     }
 
-    return render(request, 'dashboard.html', context)
+    return render(request, 'dashboard-product.html', context)
 
 def shorts(request):
 
@@ -126,7 +126,7 @@ def shorts(request):
         'search': search_term,
     }
 
-    return render(request, 'dashboard.html', context)
+    return render(request, 'dashboard-product.html', context)
 
 def jeans(request):
     search_prod = ''
@@ -148,7 +148,7 @@ def jeans(request):
         'search': search_term,
     }
 
-    return render(request, 'dashboard.html', context)
+    return render(request, 'dashboard-product.html', context)
 
 ###########################################################
 
@@ -286,3 +286,5 @@ def white(request):
 
     return render(request, 'dashboard.html', context)
 
+def suggesions(request):
+    return render(request, 'dashboard-product.html')

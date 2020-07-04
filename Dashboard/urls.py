@@ -16,4 +16,5 @@ urlpatterns = [
     path('black', views.black, name='black'),
     path('green', views.green, name='green'),
     path('white', views.white, name='white'),
+    path('sugessions', views.suggesions, name='sugessions'),
 ]

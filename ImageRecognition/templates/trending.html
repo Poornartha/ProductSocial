@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<h1 class="text-center">{{search}}</h1>
+<h1 class="text-center">{{search | title}}</h1>
 {% if listings %}
         <div class="container products-found">
             <!-- Insert product cards here! -->

@@ -4,26 +4,26 @@
     <div class="sidebar">
         <img class="profile" src="{% static 'img/defualt.png' %}" alt="" height="80" width="80">
         {% if user.is_authenticated %}
-            <p>Welcome, {{user.first_name}}!</p>
+            <p>Welcome, {{user.first_name | title}}!</p>
         {% else %}
             <p>Welcome, Stranger!</p>
         {% endif %}
         <a href="#" class="active">Recently Searched</a>
-        {% if user.customer.favourite_item == 'shirt' %}
-        <a href="{% url 'Dashboard:shirt' %}" class="">Recommendations</a>
-        {% elif user.customer.favourite_item == 'jeans' %}
-        <a href="{% url 'Dashboard:jeans' %}" class="">Recommendations</a>
-        {% elif user.customer.favourite_item == 'trousers' %}
-        <a href="{% url 'Dashboard:trousers' %}" class="">Recommendations</a>
-        {% elif user.customer.favourite_item == 'shorts' %}
+        {% if user.customer.favourite_color == 'red' %}
+        <a href="{% url 'Dashboard:red' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_color == 'blue' %}
+        <a href="{% url 'Dashboard:blue' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_color == 'green' %}
+        <a href="{% url 'Dashboard:green' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_color == 'black' %}
         <a href="{% url 'Dashboard:shorts' %}" class="">Recommendations</a>
-        {% elif user.customer.favourite_item == 'shoes' %}
-        <a href="{% url 'Dashboard:shoes' %}" class="">Recommendations</a>
-        {% elif user.customer.favourite_item == 'tee' %}
-        <a href="{% url 'Dashboard:tee' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_color == 'white' %}
+        <a href="{% url 'Dashboard:white' %}" class="">Recommendations</a>
+        {% elif user.customer.favourite_color == 'yellow' %}
+        <a href="{% url 'Dashboard:yellow' %}" class="">Recommendations</a>
         {%endif%}
 
-        <a href="#" class="">Edit Profile</a>
+        <a href="{% url 'Dashboard:sugessions' %}" class="">Suggestions</a>
     </div>
 
     <div class="content">
@@ -31,7 +31,7 @@
         <hr>
         <div class="product-name">
             <a href="#">
-                {{search1}}
+                {{search1 | title}}
                 <ion-icon name="arrow-forward-circle-outline"></ion-icon>
             </a>
 
@@ -62,7 +62,7 @@
         <br>
         <div class="product-name">
             <a href="#">
-                {{search2}}
+                {{search2 | title}}
                 <ion-icon name="arrow-forward-circle-outline"></ion-icon>
             </a>
         </div>
@@ -88,7 +88,7 @@
         <br>
         <div class="product-name">
             <a href="#">
-                {{search3}}
+                {{search3 | title}}
                 <ion-icon name="arrow-forward-circle-outline"></ion-icon>
             </a>
         </div>
