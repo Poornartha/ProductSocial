@@ -41,7 +41,7 @@
     text-align: center;
     margin-top: 120px;
     margin-bottom: 50px;
-    
+
 }
 
 .wrapper-2 {
@@ -85,13 +85,10 @@
     z-index: 999;
     height: 66px;
     background-color: transparent;
+    overflow-x: hidden;
 }
 
-.collapse {
-    z-index: 999;
-}
-
-.navbar a{  
+.navbar a{
     font-size: 16px;
     letter-spacing: 1px;
     text-decoration: none;
@@ -239,17 +236,17 @@ section{
     background: #b8336a;
     overflow-x: hidden;
 }
-   
+
 section .wave{
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100px;
-    background: url('https://i.imgur.com/oCHtGeR.png');
+    background: url(/frontend/staticfiles/img/wave.png);
     background-size: 1000px 100px;
 }
-   
+
 section .wave.wave1{
     animation: animate 30s linear infinite;
     z-index: 1000px;
@@ -257,7 +254,7 @@ section .wave.wave1{
     animation-delay: 0s;
     bottom: 0;
 }
-   
+
 section .wave.wave2{
     animation: animate2 15s linear infinite;
     z-index: 999px;
@@ -345,13 +342,11 @@ label {
     color: black;
     font-weight: 600;
     font-size: 0.85em;
-}
-  
-input:focus {
+  }
+  input:focus {
     outline: none;
-}
-  
-.form {
+  }
+  .form {
     display: flex;
     width: auto;
     background: #fff;
@@ -359,24 +354,20 @@ input:focus {
     padding: 25px;
     border-radius: 25px;
     box-shadow: 0px 10px 25px 5px #0000000f;
-}
-  
-.sign-in-section {
+  }
+  .sign-in-section {
     padding: 30px;
-}
-  
-.sign-in-section h6 {
+  }
+  .sign-in-section h6 {
     margin-top: 0px;
     font-size: 0.75em;
-}
-  
-.sign-in-section h1 {
+  }
+  .sign-in-section h1 {
     text-align: center;
     font-weight: 700;
     position: relative;
-}
-  
-.sign-in-section h1:after {
+  }
+  .sign-in-section h1:after {
     position: absolute;
     content: "";
     height: 5px;
@@ -393,20 +384,18 @@ input:focus {
     -moz-transition: 0.25s;
     -webkit-transition: 0.25s;
     transition: 0.25s;
-}
+  }
 
-.sign-in-section h1:hover:after {
+  .sign-in-section h1:hover:after {
     width: 100px;
-}
-  
-.sign-in-section ul {
+  }
+  .sign-in-section ul {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: center;
-}
-  
-.sign-in-section ul > li {
+  }
+  .sign-in-section ul > li {
     display: inline-block;
     padding: 10px;
     font-size: 15px;
@@ -417,170 +406,75 @@ input:focus {
     border-radius: 50%;
     box-shadow: 0px 3px 1px #0000000f;
     border: 1px solid #e2e2e2;
-}
-  
-.sign-in-section p {
+  }
+  .sign-in-section p {
     text-align: center;
     font-size: 0.85em;
-}
-  
-.form-field {
+  }
+  .form-field {
     display: block;
     width: 300px;
     margin: 10px auto;
-}
-  
-.form-field label {
+  }
+  .form-field label {
     display: block;
     margin-bottom: 10px;
-}
-  
-.form-field input[type="email"],
-input[type="password"], input[type="name"], input[type="username"] {
+  }
+  .form-field input[type="email"],
+  input[type="password"], input[type="name"], input[type="username"] {
     width: -webkit-fill-available;
     padding: 5px 15px;
     border-radius: 10px;
     border: 1px solid #e8e8e8;
-}
-  
-.form-field input::placeholder {
+  }
+  .form-field input::placeholder {
     color: #e8e8e8;
-}
-  
-.form-field input:focus {
+  }
+  .form-field input:focus {
     border: 1px solid #b8336a;
-}
-  
-.form-field input[type="checkbox"] {
+  }
+  .form-field input[type="checkbox"] {
     display: inline-block;
-}
-  
-.form-options {
+  }
+  .form-options {
     display: block;
     margin: auto;
     width: 300px;
-}
-  
-.checkbox-field {
+  }
+  .checkbox-field {
     display: inline-block;
     float: left;
-}
-  
-.form-options a {
+  }
+  .form-options a {
     float: right;
     text-decoration: none;
-}
-  
-.btn-2 {
+  }
+  .btn-2 {
     padding: 15px;
     font-size: 1em;
     width: 100%;
     border-radius: 25px;
     border: none;
     margin: 20px 0px;
-}
+  }
 
-.btn-signin {
+  .btn-signin {
     cursor: pointer;
     background: #b8336a;
     background: -webkit-linear-gradient(to right, #c490d1, #b8336a);
     background: linear-gradient(to right, #c490d1, #b8336a);
     box-shadow: 0px 5px 15px 5px #840fe440;
     color: #fff;
-}
-  
-.links a:nth-child(1) {
-    float: left;
-}
+  }
 
-.links a:nth-child(2) {
+
+  .links a:nth-child(1) {
+    float: left;
+  }
+  .links a:nth-child(2) {
     float: right;
-}
+  }
 
 .shadow-card {
     box-shadow: 5px 10px 10px 5px #00000049;
-}
-
-/* SIDEBAR */
-
-.profile {
-  margin: 30px auto;
-  border-radius: 50%;
-}
-
-.sidebar {
-  margin: 10px;
-  border-radius: 5px;
-  padding: 0;
-  width: 200px;
-  background-color: #b8336a;
-  position: fixed;
-  height: 80%;
-  overflow: auto;
-  top: 66px;
-  text-align: center;
-}
-
-/* Sidebar links */
-.sidebar a {
-  display: block;
-  color: #ffffffb7 !important;
-  padding: 16px;
-  text-decoration: none;
-}
-
-.sidebar p {
-  color: #fff;
-}
-/* Active/current link */
-.sidebar a.active {
-  background-color: #f7f8fc;
-  font-weight: 500;
-  color: #b8336a !important;
-}
-
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #acacde63;
-  font-weight: 500;
-  color: #fff !important;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 80%;
-    height: auto;
-    position: relative;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: 10px;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-    
-  }
-}
-
-#b8336a
-    2: #c490d1
-    3: #acacde
-    4: #abdafc
-    5: #e5fcff
+ }

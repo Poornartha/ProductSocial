@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
-{% load bootstrap3 %}
+{%load bootstrap3%}
 {% block content %}
 
-<div class="container">
+<div class="container" style="text-align: center; margin: auto">
   <h1>Sign Up</h1>
-  <form class="" method="POST">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    <input type="submit" name="" value="Sign Up" class="btn btn-default">
-  </form>
+  <div class="form-div" style="border: 1.2px solid grey; border-radius: 7px; padding: 50px; text-align: center;
+                              max-width: 600px; margin: auto; padding-left: 75px; padding-right: 75px">
+    <form class="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input type="submit" name="" value="Sign Up" class="btn btn-outline-primary">
+    </form>
+
+  </div>
+
 
 </div>
 

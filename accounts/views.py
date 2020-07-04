@@ -27,9 +27,10 @@ def SignUp(request):
             user.save()
             customer = Customer.objects.create(user=user, favourite_color=favourite_color, favourite_item=fav_product)
             customer.save()
-            return reverse_lazy('login')
+            return redirect('login')
+        else:
+            return render(request, 'accounts/login.html', {'form': form})
     context = {
         'form': form,
     }
     return render(request, 'accounts/signup.html', context)
-
