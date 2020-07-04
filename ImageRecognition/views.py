@@ -31,8 +31,10 @@ def home(request):
                 output = 'shoe'
             elif 'jersey' in output:
                 output = 'tee'
-            elif 'cardigan' in output:
+            elif 'cardigan' in output: 
                 output = 'shirt'
+            elif 'lorikeet' in output or 'macaw' in output:
+                output = 'parrot'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
@@ -83,6 +85,8 @@ def limeroad(request):
                 output = 'tee'
             elif 'cardigan' in output:
                 output = 'shirt'
+            elif 'lorikeet' in output or 'macaw' in output:
+                output = 'parrot'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
@@ -132,6 +136,8 @@ def zobello(request):
                 output = 'tee'
             elif 'cardigan' in output:
                 output = 'shirt'
+            elif 'lorikeet' in output or 'macaw' in output:
+                output = 'parrot'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
@@ -186,6 +192,8 @@ def randomize(request):
                 output = 'tee'
             elif 'cardigan' in output:
                 output = 'shirt'
+            elif 'lorikeet' in output or 'macaw' in output:
+                output = 'parrot'
             to_search = output.split('_')
             search_term = ''
             for i in to_search:
@@ -258,6 +266,8 @@ def search_bewakoof(request):
                 output = 'tee'
             elif 'cardigan' in output:
                 output = 'shirt'
+            elif 'lorikeet' in output or 'macaw' in output:
+                output = 'parrot'
             search_term = output
             
             if request.user.is_active:

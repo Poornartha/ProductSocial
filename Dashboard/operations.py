@@ -65,7 +65,7 @@ def scrape(search):
     final_postings = []
     i = 0
     # size_listings = soup.find_all('div', {'class': 'productCardDetail'})
-    while i<len(post_listings) and i<10:
+    while i<len(post_listings) and i<8:
         post = post_listings[i]
         post_title = post.find('h3').text
         post_price = 'Rs. ' + post.find('b').text
