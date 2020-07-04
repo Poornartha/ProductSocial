@@ -1,8 +1,9 @@
 
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import forms
 from .models import Search
+from django.db.models import Count
 
 # Imaginary function to handle an uploaded file.
 from .operations import recognize, scrape, scrape_limeroad, scrape_zobello
@@ -212,26 +213,12 @@ def landing(request):
 
 
 def trending(request):
-    search_list = Search.objects.all()
+    search_list = Search.objects.annotate(user_count=Count('users')).order_by('-user_count')
     if len(search_list) > 10:
         search_list = search_list[:10]
-    search_list = list(search_list)
-    # print(search_list)
-    for i in range(len(search_list)):
-        for j in range(len(search_list)):
-            if len(search_list[i].users.all()) > len(search_list[j].users.all()):
-                temp = search_list[j]
-                search_list[j] = search_list[i]
-                search_list[i] = temp 
-    max_1 = search_list[0].search_term
-    max_2 = search_list[2].search_term
-    listings_1 = scrape_limeroad(max_1)
-    listings_2 = scrape_limeroad(max_2)
-    listings = listings_1 + listings_2
-
+    
     context = {
-        'search': max_1 + ' and ' + max_2,
-        'listings': listings,
+        'search_list': search_list,
     }
 
     return render(request, 'trending.html', context)
@@ -446,3 +433,17 @@ def search_randomize(request):
         form = forms.GetSearch()
         context['form'] = form
     return render(request, 'search-term.html', context)
+
+
+def trend(request, pk):
+    s = get_object_or_404(Search, pk=pk)
+    listings = []
+    if s:
+        listings += scrape_limeroad(s.search_term)
+        listings += scrape(s.search_term)
+        listings += scrape_zobello(s.search_term)
+    context = {
+        'search': s.search_term,
+        'listings': listings,
+    }
+    return render(request, 'trending-product.html', context)
