@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="sidebar">
-        <img class="profile" src="{% static 'img/defualt.png' %}" alt="" height="80" width="80">
+        <img class="profile" src="https://demos.creative-tim.com/bs3/material-kit-pro/assets/img/placeholder.jpg" alt="" height="80" width="80">
         {% if user.is_authenticated %}
             <p>Welcome, {{user.first_name | title}}!</p>
         {% else %}
@@ -35,7 +35,11 @@
         <h2>You might also like!</h2>
         <hr>
         <div class="info-message">
-            We Know Your Faourite Clothing is {{search | title}}. Choose Your Color.
+            {% if search %}
+            We Know Your Choice Of Clothing is {{ search | title}}. Choose Your Color.
+            {% else %}
+            We Know Your Choice Of Clothing is {{ user.customer.favourite_color | title}}. Choose Your Product.
+            {% endif %}
         </div>
         <div class="colour-select">
             <a href="{% url 'Dashboard:shirt' %}"><button class="rec-colors" style="background-color: white; font-weight: bolder;">Shirt</button></a>
