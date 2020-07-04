@@ -8,6 +8,7 @@ def dashboard(request):
 
     search_terms = []
     search_now = ''
+    search_now1 = ''
     search_now2 = ''
     search_now3 = ''
     listings1 = []
@@ -22,25 +23,28 @@ def dashboard(request):
                 listings1 = scrape(search_now)
             else:
                 listings1 = scrape_limeroad(search_now)
-            if len(search_terms) - 2 >= 0: 
+            search_now1 = search_now
+            if len(search_terms) - 2 >= 0:
                 search_now = search_terms[len(search_terms) - 2].search_term
                 if 'tee' in search_now:
                     listings2 = scrape(search_now)
                 else:
                     listings2 = scrape_limeroad(search_now)
+                search_now2 = search_now
             elif len(search_terms) - 3 >= 0:
                 search_now = search_terms[len(search_terms) - 3].search_term
                 if 'tee' in search_now:
                     listings3 = scrape(search_now)
                 else:
                     listings3 = scrape_limeroad(search_now)
+                search_now3 = search_now
             if len(search_terms) >= 3:
                 listings1 = listings1[:3]
                 listings2 = listings2[:3]
                 listings3 = listings3[:3]
             elif len(search_terms) >= 2:
                 listings1 = listings1[:6]
-                listings2 = listings2[:6] 
+                listings2 = listings2[:6]
         else:
             listings1 = []
             listings2 = []
@@ -54,7 +58,7 @@ def dashboard(request):
         'listings1': listings1,
         'listings2': listings2,
         'listings3': listings3,
-        'search1': search_now,
+        'search1': search_now1,
         'search2': search_now2,
         'search3': search_now3,
     }
