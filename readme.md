@@ -3,6 +3,7 @@ A Social Media App for Finding and Sharing Products
 *Tech Stack:*
 - **Image Recognition:** MobileNet Model (Keras)
 - **Color Detection:** OpenCV, Scikit-Image, Sk-Learn K-Means Clustering
+- **Web Scraping:** Beautiful Soup 4
 - **Backend:** Django, dbSQLite3
 - **FrontEnd:** HTML, CSS, JavaScript
 
