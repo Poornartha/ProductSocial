@@ -1,5 +1,12 @@
 A Social Media App for Finding and Sharing Products
 
+*How To Run The Project*
+- Clone The Repository
+- Create a Virtual Environment
+- Install Requirements: **pip install -r requirements.txt**
+- Run Migrations: **python manage.py migrate**
+- Run-Server: **python manage.py runserver**
+
 *Tech Stack:*
 - **Image Recognition:** MobileNet Model (Keras)
 - **Color Detection:** OpenCV, Scikit-Image, Sk-Learn K-Means Clustering
