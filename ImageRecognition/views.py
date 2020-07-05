@@ -230,8 +230,7 @@ def landing(request):
 
 def trending(request):
     search_list = Search.objects.annotate(user_count=Count('users')).order_by('-user_count')
-    if len(search_list) > 10:
-        search_list = search_list[:10]
+
     
     context = {
         'search_list': search_list,
