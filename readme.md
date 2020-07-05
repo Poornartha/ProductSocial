@@ -1,12 +1,12 @@
 A Social Media App for Finding and Sharing Products
 
-Tech Stack:
-- Image Recognition: MobileNet Model (Keras)
-- Color Detection: OpenCV, Scikit-Image, Sk-Learn K-Means Clustering
-- Backend: Django, dbSQLite3
-- FrontEnd: HTML, CSS, JavaScript
+*Tech Stack:*
+- **Image Recognition:** MobileNet Model (Keras)
+- **Color Detection:** OpenCV, Scikit-Image, Sk-Learn K-Means Clustering
+- **Backend:** Django, dbSQLite3
+- **FrontEnd:** HTML, CSS, JavaScript
 
-Features:
+*Features:*
 - **Image Detection** (For Detection of the Uploaded Image)
 - **Color Detection** (For Detection of the Color of the Uploaded Image)
 - **Web Scraping** (For Scraping and Fetching the Data From Websites)
@@ -17,7 +17,7 @@ Features:
 - **Gender Integration** (The Use of Customer Models help us to know gender of users)
 - **Search By Term** (Helps you search using just the Search Term rather than the Image itself)
 
-Developers Behind the Project:
+*Developers Behind the Project:*
 - **Saurav Uppoor** 
 - **Archit Shinde**
 - **Poornartha Sawant**
