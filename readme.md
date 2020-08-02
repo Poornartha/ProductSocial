@@ -1,5 +1,7 @@
 A Social Media App for Finding and Sharing Products
 
+**Check out the Project Video Here: https://www.linkedin.com/posts/spoornartha_made-this-amazing-project-alongside-archit-ugcPost-6685904476315951104-p-al**
+
 *How To Run The Project*
 - Clone The Repository
 - Create a Virtual Environment
