@@ -28,8 +28,8 @@ A Social Media App for Finding and Sharing Products
 - **Search By Term** (Helps you search using just the Search Term rather than the Image itself)
 
 *Developers Behind the Project:*
+- **Poornartha Sawant**
 - **Saurav Uppoor** 
 - **Archit Shinde**
-- **Poornartha Sawant**
 
 **We welcome any and all Open Source Contributions.**
