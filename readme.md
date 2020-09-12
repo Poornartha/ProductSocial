@@ -1,4 +1,4 @@
-A Social Media App for Finding and Sharing Products
+Find and Share Products on the go using Reverse Object Detection and Webscraping 
 
 **Check out the Project Video Here: https://www.linkedin.com/posts/spoornartha_made-this-amazing-project-alongside-archit-ugcPost-6685904476315951104-p-al**
 
